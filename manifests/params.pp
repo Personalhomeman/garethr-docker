@@ -1,4 +1,4 @@
-# == Class: docker::paramrs
+# == Class: docker::params
 #
 # Defaut parameter values for the docker module
 #
@@ -16,4 +16,7 @@ class docker::params {
     'Debian': { $package_source_location = 'https://get.docker.io/ubuntu' }
     default:  { $package_source_location = '' }
   }
+  $proxy                        = undef
+  $no_proxy                     = undef
+  $execdriver                   = undef
 }
