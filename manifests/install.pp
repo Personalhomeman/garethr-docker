@@ -17,7 +17,6 @@ class docker::install {
       Package['apt-transport-https'] -> Package['docker']
 
       if ($docker::use_upstream_package_source) {
-        include apt
         apt::source { 'docker':
           location          => $docker::package_source_location,
           release           => 'docker',
