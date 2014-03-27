@@ -38,6 +38,7 @@ class docker::service (
         force   => true,
         content => template('docker/etc/init/docker.conf.erb'),
         notify  => Service['docker'],
+        before  => Service['docker'],
       }
     }
     'RedHat': {
